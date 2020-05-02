@@ -1,14 +1,12 @@
 from student import Student
 from cohort import Cohort
 from exercise import Exercise
+from nss_person import NSSPerson
 
-class Instructor:
+class Instructor(NSSPerson):
 
     def __init__(self):
-        self.first_name = ""
-        self.last_name = ""
-        self.slack_handle = ""
-        self.cohort = 0
+        super().__init__()
         self.specialty = ""
         
     def assign(self, exercise, cohort):

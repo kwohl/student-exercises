@@ -1,8 +1,7 @@
-class Student:
+from nss_person import NSSPerson
+
+class Student(NSSPerson):
 
     def __init__(self):
-        self.first_name = ""
-        self.last_name = ""
-        self.slack_handle = ""
-        self.cohort = 0
+        super().__init__()
         self.exercises = []

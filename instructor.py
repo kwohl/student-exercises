@@ -5,10 +5,14 @@ from nss_person import NSSPerson
 
 class Instructor(NSSPerson):
 
-    def __init__(self):
-        super().__init__()
+    def __init__(self, first_name, last_name):
+        super().__init__(first_name, last_name)
         self.specialty = ""
         
     def assign(self, exercise, cohort):
         for student in cohort.students:
             student.exercises.append(exercise)
+
+    def assign_cohort(self, cohort):
+        self.cohort = cohort
+        cohort.instructors.append(self)

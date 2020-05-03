@@ -1,0 +1,1 @@
+![ERD 1](./assets/ERDStudentExercise1.png)

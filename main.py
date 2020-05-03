@@ -30,14 +30,48 @@ roxanne.assign_cohort(day40)
 
 andy.assign_cohort(day38)
 kristen.assign_cohort(day38)
-bryan.assign_cohort(day38)
+bryan.assign_cohort(day40)
 jisie.assign_cohort(day38)
 
-for instructor in day38.instructors:
-    print(instructor.first_name)
+
+# for instructor in day38.instructors:
+#     print(instructor.first_name)
 
 andy.assign(fizz_buzz, day38)
 jisie.assign(sensitive_information, day38)
+bryan.assign(flexbox, day40)
+andy.assign(flexbox, evening11)
+andy.assign(fizz_buzz, evening11)
+andy.assign(sensitive_information, evening11)
+andy.assign(daily_journal, evening11)
 
-for exercise in katie.exercises:
-    print(exercise.name)
+# for exercise in katie.exercises:
+#     print(exercise.name)
+
+
+students = list()
+exercises = list()
+
+students.append(ivan)
+students.append(katie)
+students.append(cooper)
+students.append(roxanne)
+# for student in students:
+#     print(student.first_name)
+exercises.append(fizz_buzz)
+exercises.append(flexbox)
+exercises.append(daily_journal)
+exercises.append(sensitive_information)
+
+for student in students:
+    current_exercises = []
+    for exercise in exercises:
+        for student_exercise in student.exercises:
+            if exercise.name == student_exercise.name:
+                current_exercises.append(exercise.name)
+    if len(current_exercises) == 2:
+        print(f"{student.first_name} is working on {' and '.join(current_exercises)}.")
+    if len(current_exercises) == 1:
+        print(f"{student.first_name} is working on {' '.join(current_exercises)}.")
+    if len(current_exercises) > 2:
+        print(f"{student.first_name} is working on {', '.join(current_exercises[:-1])}, and {current_exercises[-1]}.")
